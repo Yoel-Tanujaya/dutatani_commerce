@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Duta Tani Skripsi</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_search">Cari</string>
+    <string name="title_shopping_list">Keranjang</string>
+    <string name="deliver_to">MENGIRIMKAN KE  </string>
+    <string name="home_greetings">Hi, Yoel Tanujaya</string>
+    <string name="cat_veggie">Sayuran</string>
+    <string name="cat_fruit">Buah-buahan</string>
+    <string name="cat_poultry">Unggas</string>
+    <string name="cat_meat">Daging</string>
+    <string name="cat_seafood">Seafood</string>
+    <string name="cat_carbo">Karbohidrat</string>
+</resources>
