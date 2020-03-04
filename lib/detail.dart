@@ -1,6 +1,7 @@
 import 'package:dutatani_commerce_flutter/home.dart';
 import 'package:dutatani_commerce_flutter/product.dart';
 import 'package:dutatani_commerce_flutter/store.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dutatani_commerce_flutter/decoration.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +26,7 @@ class DetailActivityList extends StatelessWidget{
 
   Widget _showAppBarSearch(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -62,6 +64,7 @@ class DetailActivityList extends StatelessWidget{
 
   Widget _showAppBarStorePage(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -227,7 +230,7 @@ class DetailActivityCard extends StatelessWidget{
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                 children: <Widget>[
                   // ignore: sdk_version_ui_as_code
-                  for (int id=1; id<12; id++) ProductItemCard(name: 'Cabe Rawit Lokal', stockStatus: true, stock: '100 kg', harvestTime: 'Hasil Panen 25 Feb 2020', price: 40000,)
+                  for (int id=1; id<12; id++) ProductItemCard(name: 'Jagung Manis Organik Lokal', stockStatus: true, stock: '100', harvestTime: 'Panen: 25 Feb 2020', price: 40000,)
                 ],
               ),
             ),
@@ -374,15 +377,7 @@ class DetailStoreModalSheet extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  height: 6,
-                  width: 48,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(100)),
-                      color: Colors.black12
-                  ),
-                ),
+                CustomWidget().modalSheetIndicator(),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8),
                 ),
@@ -465,39 +460,50 @@ class DetailStoreModalSheet extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: RaisedButton.icon(
-                    onPressed: (){},
-                    color: Colors.green[100],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(right: 4),
+                        child: RaisedButton.icon(
+                          onPressed: (){},
+                          color: Colors.green[100],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          splashColor: Colors.green[200],
+                          elevation: 0,
+                          icon: Icon(Icons.call, color: Colors.green[900],),
+                          label: Text(
+                            'HUBUNGI',
+                            style: StyleText().buttonLabel(Colors.green[900]),
+                          ),
+                        ),
+                      ),
                     ),
-                    splashColor: Colors.green[200],
-                    elevation: 0,
-                    icon: Icon(Icons.call, color: Colors.green[900],),
-                    label: Text(
-                      'HUBUNGI ADMIN / TOKO',
-                      style: StyleText().buttonLabel(Colors.green[900]),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: RaisedButton.icon(
-                    onPressed: (){},
-                    color: Colors.blue[100],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    splashColor: Colors.blue[200],
-                    elevation: 0,
-                    icon: Icon(Icons.near_me, color: Colors.blue[900],),
-                    label: Text(
-                      'TEMUKAN LOKASI DI PETA',
-                      style: StyleText().buttonLabel(Colors.blue[900]),
-                    ),
-                  ),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(left: 4),
+                        child: RaisedButton.icon(
+                          onPressed: (){},
+                          color: Colors.blue[100],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          splashColor: Colors.blue[200],
+                          elevation: 0,
+                          icon: Icon(Icons.near_me, color: Colors.blue[900],),
+                          label: Text(
+                            'BUKA PETA',
+                            style: StyleText().buttonLabel(Colors.blue[900]),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 )
               ],
             )
@@ -523,7 +529,7 @@ class _AdminProductPageListState extends State<AdminProductPageList>{
         title: Text(
           'DAFTAR PRODUK',
           textAlign: TextAlign.left,
-          style: StyleText().superTitleColor(Colors.white),
+          style: StyleText().title16Color(Colors.white),
         ),
         backgroundColor: AppColor().primary,
         elevation: 0,
@@ -565,7 +571,7 @@ class _AdminProductPageCardState extends State<AdminProductPageCard>{
         title: Text(
           'DAFTAR PRODUK',
           textAlign: TextAlign.left,
-          style: StyleText().superTitleColor(Colors.white),
+          style: StyleText().title16Color(Colors.white),
         ),
         backgroundColor: AppColor().primary,
         elevation: 0,
@@ -586,7 +592,7 @@ class _AdminProductPageCardState extends State<AdminProductPageCard>{
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                   children: <Widget>[
                     // ignore: sdk_version_ui_as_code
-                    for (int id=1; id<12; id++) ProductItemCardWithMenu(name: 'Cabe Rawit Lokal', stockStatus: true, stock: '100 kg', harvestTime: 'Hasil Panen 25 Feb 2020', price: 40000,)
+                    for (int id=1; id<12; id++) ProductItemCardWithMenu(name: 'Cabe Rawit Lokal Organik Super', stockStatus: true, stock: '100 kg', harvestTime: 'Panen: 25 Feb 2020', price: 40000,)
                   ],
                 ),
             ),

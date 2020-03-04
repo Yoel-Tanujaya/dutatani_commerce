@@ -232,292 +232,292 @@ class SettingsAdminActivity extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor().primary,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: <Widget>[
-            Container(
-                height: 150,
-                padding: EdgeInsets.only(left: 24, right: 24, top: 50, bottom: 24),
-                child: Center(
-                  child: Container(
-                    child: Row(
-                      children: <Widget>[
-                        CircleAvatar(
-                          child: Text(
-                            'T',
-                            style: TextStyle(
-                              fontSize: 32,
-                              color: Colors.white,
+        backgroundColor: AppColor().primary,
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            children: <Widget>[
+              Container(
+                  height: 150,
+                  padding: EdgeInsets.only(left: 24, right: 24, top: 50, bottom: 24),
+                  child: Center(
+                    child: Container(
+                      child: Row(
+                        children: <Widget>[
+                          CircleAvatar(
+                            child: Text(
+                              'T',
+                              style: TextStyle(
+                                fontSize: 32,
+                                color: Colors.white,
+                              ),
+                            ),
+                            radius: 30,
+                            backgroundColor: Color.fromARGB(1000, 0, 144, 112),
+                            foregroundColor: Colors.white,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 8),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Text(
+                                  groupName,
+                                  style: StyleText().superTitle(),
+                                  maxLines: 2,
+                                ),
+                                Text(
+                                  'Admin: $adminName',
+                                  style: StyleText().subtitle1Color(Colors.black54),
+                                ),
+                              ],
                             ),
                           ),
-                          radius: 30,
-                          backgroundColor: Color.fromARGB(1000, 0, 144, 112),
-                          foregroundColor: Colors.white,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 8),
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              Text(
-                                groupName,
-                                style: StyleText().superTitle(),
-                                maxLines: 2,
-                              ),
-                              Text(
-                                'Admin: $adminName',
-                                style: StyleText().subtitle1Color(Colors.black54),
-                              ),
-                            ],
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 4),
-                        ),
-                        Tooltip(
-                          message: 'Edit Profil',
-                          child: SizedBox(
-                            height: 36,
-                            width: 36,
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.black
-                              ),
-                              child: IconButton(
-                                icon: Icon(Icons.edit, color: Colors.white, size: 18,),
-                              ),
-                            )
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                )
-            ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-                alignment: Alignment.topLeft,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16))
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      'PROFIL ADMIN',
-                      style: StyleText().sectionTitle(),
-                    ),
-                    Divider(
-                      color: Colors.black38,
-                      thickness: 1,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 8),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'NAMA',
-                                style: StyleText().sectionSubtitle(),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 2),
-                              ),
-                              Text(
-                                adminName,
-                                style: StyleText().title16(),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 12),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'ALAMAT EMAIL',
-                                style: StyleText().sectionSubtitle(),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 2),
-                              ),
-                              Text(
-                                adminEmail,
-                                style: StyleText().title16(),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 12),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'NOMOR TELEPON ADMIN',
-                                style: StyleText().sectionSubtitle(),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 2),
-                              ),
-                              Text(
-                                adminPhone,
-                                style: StyleText().title16(),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 32),
-                    ),
-                    Text(
-                      'PROFIL KELOMPOK TANI',
-                      style: StyleText().sectionTitle(),
-                    ),
-                    Divider(
-                      color: Colors.black38,
-                      thickness: 1,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 8),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'NAMA KELOMPOK TANI',
-                                style: StyleText().sectionSubtitle(),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 2),
-                              ),
-                              Text(
-                                groupName,
-                                style: StyleText().title16(),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 12),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                'ALAMAT KELOMPOK TANI',
-                                style: StyleText().sectionSubtitle(),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 2),
-                              ),
-                              Text(
-                                groupAddress,
-                                maxLines: 2,
-                                style: StyleText().title16(),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
-                        )
-                      ],
-                    ),
-                    Expanded(
-                      child: Container(
-
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                      width: MediaQuery.of(context).size.width,
-                      child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(50))
-                          ),
-                          splashColor: Colors.red[100],
-                          onPressed: (){
-                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeActivity()), ModalRoute.withName('/adminHome'));
-                          },
-                          color: Colors.red[50],
-                          elevation: 0,
-                          child: Text(
-                            'KELUAR AKUN',
-                            style: StyleText().buttonLabel(Colors.red),
+                          Tooltip(
+                            message: 'Edit Profil',
+                            child: SizedBox(
+                                height: 36,
+                                width: 36,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color: Colors.black
+                                  ),
+                                  child: IconButton(
+                                    icon: Icon(Icons.edit, color: Colors.white, size: 18,),
+                                  ),
+                                )
+                            ),
                           )
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  )
               ),
-            )
-          ],
-        ),
-      )
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                  alignment: Alignment.topLeft,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16))
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'PROFIL ADMIN',
+                        style: StyleText().sectionTitle(),
+                      ),
+                      Divider(
+                        color: Colors.black38,
+                        thickness: 1,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 8),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'NAMA',
+                                  style: StyleText().sectionSubtitle(),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2),
+                                ),
+                                Text(
+                                  adminName,
+                                  style: StyleText().title16(),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 12),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'ALAMAT EMAIL',
+                                  style: StyleText().sectionSubtitle(),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2),
+                                ),
+                                Text(
+                                  adminEmail,
+                                  style: StyleText().title16(),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 12),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'NOMOR TELEPON ADMIN',
+                                  style: StyleText().sectionSubtitle(),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2),
+                                ),
+                                Text(
+                                  adminPhone,
+                                  style: StyleText().title16(),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 32),
+                      ),
+                      Text(
+                        'PROFIL KELOMPOK TANI',
+                        style: StyleText().sectionTitle(),
+                      ),
+                      Divider(
+                        color: Colors.black38,
+                        thickness: 1,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 8),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'NAMA KELOMPOK TANI',
+                                  style: StyleText().sectionSubtitle(),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2),
+                                ),
+                                Text(
+                                  groupName,
+                                  style: StyleText().title16(),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 12),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'ALAMAT KELOMPOK TANI',
+                                  style: StyleText().sectionSubtitle(),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2),
+                                ),
+                                Text(
+                                  groupAddress,
+                                  maxLines: 2,
+                                  style: StyleText().title16(),
+                                ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.border_color, color: Colors.white, size: 20,),
+                          )
+                        ],
+                      ),
+                      Expanded(
+                        child: Container(
+
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40,
+                        width: MediaQuery.of(context).size.width,
+                        child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(50))
+                            ),
+                            splashColor: Colors.red[100],
+                            onPressed: (){
+                              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeActivity()), ModalRoute.withName('/adminHome'));
+                            },
+                            color: Colors.red[50],
+                            elevation: 0,
+                            child: Text(
+                              'KELUAR AKUN',
+                              style: StyleText().buttonLabel(Colors.red),
+                            )
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        )
     );
   }
 }
@@ -659,9 +659,7 @@ class TransactionActivity extends StatelessWidget{
       ),
       bottomNavigationBar: BottomAppBar(
         color: AppColor().primary,
-        shape: CircularNotchedRectangle(
-
-        ),
+        shape: CircularNotchedRectangle(),
         child: Row(
           children: <Widget>[
             Tooltip(
@@ -669,7 +667,7 @@ class TransactionActivity extends StatelessWidget{
               child: FlatButton.icon(
                 label: Text(
                   'PILIH BULAN', //dinamis berdasarkan bulan yang dipilih, kalo tidak di filter akan muncul 'BULAN'
-                  style: StyleText().buttonLabel(Colors.black),
+                  style: StyleText().sectionSubtitleColor(Colors.black),
                 ),
                 icon: Icon(Icons.today, color: Colors.black,),
               ),
@@ -679,7 +677,7 @@ class TransactionActivity extends StatelessWidget{
               child: FlatButton.icon(
                 label: Text(
                   'URUTKAN',
-                  style: StyleText().buttonLabel(Colors.black),
+                  style: StyleText().sectionSubtitleColor(Colors.black),
                 ),
                 icon: Icon(Icons.sort, color: Colors.black,),
               ),

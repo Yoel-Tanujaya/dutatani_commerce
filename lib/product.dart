@@ -183,18 +183,18 @@ class ProductItemCardWithMenu extends StatelessWidget {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(top: 12),
-                    height: 164,
-                    width: 164,
-                    decoration: BoxDecoration(
-                        color: Colors.black54,
-                        borderRadius: BorderRadius.circular(8)),
+                  AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                      margin: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                          color: Colors.black54,
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 152, left: 8),
-                    padding:
-                        EdgeInsets.only(left: 4, right: 4, top: 2, bottom: 2),
+                    margin: EdgeInsets.only(top: 16, left: 16),
+                    padding: EdgeInsets.only(left: 4, right: 4, top: 2, bottom: 2),
                     decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(50),
@@ -208,14 +208,13 @@ class ProductItemCardWithMenu extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  padding:
-                      EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
+                  padding: EdgeInsets.only(left: 12, right: 12, bottom: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
                         name,
-                        style: StyleText().title16(),
+                        style: StyleText().title(),
                       ),
                       Expanded(
                         child: Text(
@@ -228,8 +227,8 @@ class ProductItemCardWithMenu extends StatelessWidget {
                         children: <Widget>[
                           Expanded(
                             child: Text(
-                              'Rp $price/kg',
-                              style: StyleText().title16Color(AppColor().primary),
+                              '$price/kg',
+                              style: StyleText().title16Color(AppColor().primaryDark),
                             ),
                           ),
                           Material(
@@ -436,16 +435,17 @@ class ProductItemCard extends StatelessWidget {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(top: 12),
-                    height: 164,
-                    width: 164,
-                    decoration: BoxDecoration(
-                        color: Colors.black54,
-                        borderRadius: BorderRadius.circular(8)),
+                  AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                      margin: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                          color: Colors.black54,
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 152, left: 8),
+                    margin: EdgeInsets.only(top: 16, left: 16),
                     padding:
                     EdgeInsets.only(left: 4, right: 4, top: 2, bottom: 2),
                     decoration: BoxDecoration(
@@ -462,13 +462,13 @@ class ProductItemCard extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding:
-                  EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
+                  EdgeInsets.only(left: 12, right: 12, bottom: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
                         name,
-                        style: StyleText().title16(),
+                        style: StyleText().title(),
                       ),
                       Expanded(
                         child: Text(
@@ -481,8 +481,8 @@ class ProductItemCard extends StatelessWidget {
                         children: <Widget>[
                           Expanded(
                             child: Text(
-                              'Rp $price/kg',
-                              style: StyleText().title16Color(AppColor().primary),
+                              '$price/kg',
+                              style: StyleText().title16Color(AppColor().primaryDark),
                             ),
                           ),
                         ],
@@ -546,14 +546,7 @@ class ProductEditMenuModalSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Container(
-                  height: 6,
-                  width: 48,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(100)),
-                      color: Colors.black12),
-                ),
+                CustomWidget().modalSheetIndicator(),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 4),
                 ),
@@ -566,9 +559,6 @@ class ProductEditMenuModalSheet extends StatelessWidget {
                     maxLines: 2,
                     style: StyleText().title16(),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4),
                 ),
                 Container(
                   alignment: Alignment.centerLeft,

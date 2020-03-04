@@ -167,7 +167,7 @@ class HomeActivity extends StatelessWidget{
                     padding: EdgeInsets.symmetric(vertical: 8),
                     children: <Widget>[
                       // ignore: sdk_version_ui_as_code
-                      for (int id=1; id<5; id++) StoreItemList(name: 'Toko Kelompok Tani', location: 'GONDOKUSUMAN, YOGYAKARTA, DIY', category: 'Alat Tani - Bahan Tani - +2',),
+                      for (int id=1; id<5; id++) StoreItemList(name: 'Toko Kelompok Tani', location: 'GONDOKUSUMAN, YOGYAKARTA', category: 'Alat Tani - Bahan Tani - +2',),
                     ],
                   ),
                 ),
@@ -228,7 +228,7 @@ class CategoryCard extends StatelessWidget {
             Text(
               this.name,
               textAlign: TextAlign.center,
-              style: StyleText().title16()
+              style: StyleText().title()
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 4),
