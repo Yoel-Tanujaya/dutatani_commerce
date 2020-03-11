@@ -2,7 +2,6 @@ import 'package:dutatani_commerce_flutter/admin.dart';
 import 'package:dutatani_commerce_flutter/colors.dart';
 import 'package:dutatani_commerce_flutter/decoration.dart';
 import 'package:flutter/material.dart';
-import 'package:dutatani_commerce_flutter/decoration.dart';
 
 //DIUBAH KE STATEFUL WIDGET KETIKA SUDAH BISA TERIMA USERNAME PASSWORD UNTUK LOGIN, TAMBAH STATE DAN FUNGSI UNTUK AUTHENTICATION
 

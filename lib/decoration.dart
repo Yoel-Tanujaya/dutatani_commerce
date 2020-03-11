@@ -124,7 +124,14 @@ class StyleText {
   TextStyle subtitle3() {
     return TextStyle(
         fontSize: 10,
-        color: Colors.black
+        color: Colors.black54
+    );
+  }
+
+  TextStyle subtitle3Color(Color _color) {
+    return TextStyle(
+        fontSize: 10,
+        color: _color
     );
   }
 
@@ -133,6 +140,24 @@ class StyleText {
         fontSize: 10,
         color: Colors.white,
         fontWeight: FontWeight.bold
+    );
+  }
+
+  TextStyle sectionTitle16() {
+    return TextStyle(
+      letterSpacing: 1.5,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+  }
+
+  TextStyle sectionTitle16Color(Color _color) {
+    return TextStyle(
+      letterSpacing: 1.5,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: _color,
     );
   }
 
@@ -189,6 +214,8 @@ class StyleText {
 }
 
 class CustomWidget {
+
+
   List<Widget> locationWidget(String _loc, Color _color) {
     return [
       Icon(
